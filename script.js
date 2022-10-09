@@ -1,17 +1,17 @@
 
-var formatDate = moment().format("dddd, MMMM Do YYYY")
+var formatDate = moment().format("dddd, MMMM Do YYYY") //tells us what day, month, day and year it is
 var saveBtn = $(".saveBtn")
-var currentHour = moment().hours() //look into where Robby found this
+var currentHour = moment().hours() //tells us what the current hour is
 
-$("#currentDay").text(formatDate)
+$("#currentDay").text(formatDate) //.text displays the current day (linked with an ID on body of HTML) 
 
 $(saveBtn).on("click", function(){
     var textData = $(this).siblings(".description").val() //from vantage of saveBtn-check siblings-find description-return value
-    var divKey = $(this).parent().attr("id") //this is referring to saveBtn
-    localStorage.setItem(divKey,textData)
+    var divKey = $(this).parent().attr("id") //this is referring to saveBtn- go to parent- grab attribute ID
+    localStorage.setItem(divKey,textData) //save into local storage the description and ID with vars created above
 })
 
-$("#9 .description").val(localStorage.getItem("9"))
+$("#9 .description").val(localStorage.getItem("9")) //allowing any input to stay once the browser refreshes
 // repeat for every number^^
 $("#10 .description").val(localStorage.getItem("10"))
 $("#11 .description").val(localStorage.getItem("11"))
@@ -26,7 +26,7 @@ $("#19 .description").val(localStorage.getItem("19"))
 $("#20 .description").val(localStorage.getItem("20"))
 $("#21 .description").val(localStorage.getItem("21"))
 
-$(".time-block").each(function(){
+$(".time-block").each(function(){ //this function allows the CSS to connect and change the time block colors depending on the hour
     var divTime = $(this).attr("id")
     if( divTime < currentHour){
         $()
@@ -35,7 +35,7 @@ $(".time-block").each(function(){
     if( divTime > currentHour){
         $(this).addClass("future")
     }
-    if( divTime == currentHour){
+    if( divTime == currentHour){  //only two = here because they are different "typeof" data (string and number)
         $(this).addClass("present")
     }
 })
