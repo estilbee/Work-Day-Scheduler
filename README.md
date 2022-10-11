@@ -10,7 +10,7 @@ This work day scheduler was created to allow for a place for employees and stude
 
 ## Project Link
 
-[workdayschedulerlink](https://estilbee.github.io/Work-Day-Scheduler/)
+[Work-Day-Scheduler](https://estilbee.github.io/Work-Day-Scheduler/)
 
 ## Technologies Used
 - HTML
